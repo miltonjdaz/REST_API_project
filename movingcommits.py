@@ -5,15 +5,11 @@ from github import Github
 # import boto3
 import os
 
-# Protecting my username and password 
+# Protecting the connection information  
 
 auth_token = os.environ.get('gh_token')
 
-# For some reason, this is not working
-
 g = Github(auth_token)
-
-
 
 repos_obj = g.get_repo('miltonjdaz/learning_py') # explore methods attached to repos obj
 import ipdb; ipdb.set_trace()
@@ -22,8 +18,6 @@ import ipdb; ipdb.set_trace()
 # explore the new object with for loops if they are paginated lists.
 # i.e. for i in newobj: print(i)
 # just to start
-
-
 
 
 # Code to make have transfer become a dataframe
