@@ -18,18 +18,21 @@ for i in newobj:
     print(i)
 
 # next level of pulling data is looping over paginated list newobj
-# i.e.
-
+numofcommits = []
 for i, value in enumerate(newobj, 1):
     iv = i, value
-    print(iv)
+    numofcommits.append(iv)
+    print(numofcommits)
 
 # import ipdb; ipdb.set_trace()
 
 # Saving the dataframe into a CSV file 
-df1 = pd.DataFrame(iv)
+df1 = pd.DataFrame(numofcommits)
+
 # df1 = pd.DataFrame.set_value(i, 'commits', value)
 df1.to_csv('/home/milton/github/REST_API_project/displaycommits.csv')
+
+
 #     # only if you have multiple elements for each 
 
 #     newobj[i][elem]. i is rows. elem is column.
