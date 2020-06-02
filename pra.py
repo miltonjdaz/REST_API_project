@@ -9,12 +9,16 @@ def get_data(repos):
 
     # github object
     g = Github(auth_token)
-    # repos object
+    # This connects to the corresponding repository 
     repos_obj = g.get_repo('miltonjdaz/{reposname}'.format(reposname=repos))
+    # This REST API will get the commits of the repository 
     newobj = repos_obj.get_commits()
+    # This returns the total number of commits of the repository 
     tc = newobj.totalCount
     return tc
 
+# This is needed in order to get the total number of commits 
+# for each repository and have it in a list to make a bar graph 
 repos_list = ['learning_py', 'Runescape', 'REST_API_project']
 total_count = []
 for i in repos_list:
