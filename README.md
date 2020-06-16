@@ -12,13 +12,13 @@ The 2nd draft of the project is broken down into 3 parts: a function to get the 
 def get_data(repos):
    from github import Github
 
-   # Protecting the connection information
+   Protecting the connection information
    auth_token = os.environ.get('gh_token')
 
-   # github object
+   github object
    g = Github(auth_token)
 
-   # repos object
+   repos object
    repos_obj = g.get_repo('miltonjdaz/{reposname}'.format(reposname=repos))
 
    newobj = repos_obj.get_commits()
@@ -26,6 +26,7 @@ def get_data(repos):
    tc = newobj.totalCount
 
    return tc
+
 Since I needed the total number of commits for each of the three repositories, it is better to create a function to complete the task. The REST APIs that I used were get_repo which gets the repository from GitHub, get_commits() which retrieves the number of commits in the repository, and totalCount which returns the total number of commits in the repository. Since I had the total number of commits for each repository in one location, I did not need a for loop nor the CSV files. 
 
 The 2nd part of the Python script, I created a list and appended the number of commits for each repository: 
